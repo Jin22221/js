@@ -8,12 +8,21 @@
     <!-- 計算89個雞蛋是幾打又多幾個 -->
     <div></div>
     <script>
-        let x = 89
-        document.querySelector('div').innerHTML = `
-        89個雞蛋是幾打又多幾個:<br> ${parseInt( x / 12 )}打 <br>
-        又${x % 12} 個
-        `
+        const CARTON_OF_EGGS = 12
+        let amount = 89
+        document.querySelector('div').innerText = `
+        ${amount} 個雞蛋是 
+        ${parseInt(amount / CARTON_OF_EGGS)}打又多 ${amount % CARTON_OF_EGGS}個
+        `//反引號內可以空格
+        
+        // const CARTON_OF_EGGS1 = 12
+        // let amount1 = 89
+        // document.querySelector('div').innerHTML = `
+        // ${amount} 個雞蛋是 
+        // ${parseInt(amount / CARTON_OF_EGGS)}打又多 ${amount % CARTON_OF_EGGS}個
+        // `
 
+        //innerHTML的反引號內不能換行,innerText內可以
     </script>
 </body>
 </html>
