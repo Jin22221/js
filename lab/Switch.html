@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        function doFirst(){
+            let month = parseInt(Math.random() * 12) +1
+
+            switch (month) {
+                case 10:
+                    days = 31;
+                    break;
+            
+                case 11:
+                    days = 30;
+                    break;
+            }
+            let result = document.querySelector('div')
+            result.innerHTML =`${month}月有${days}天`
+
+
+
+            // let result = document.querySelector('div')
+            // let radius = 10
+            // let area = Math.PI * radius * radius
+            // let squareFeet = parseInt(Math.random() * 851) +150
+
+            // result.innerHTML = `area: ${area}<br>`
+            // result.innerHTML += `某數的平方根: ${Math.sqrt(16)}<br>`
+            // result.innerHTML += `某數的次方: ${Math.pow(16)}<br>`
+            // result.innerHTML += `某數的四捨五入: ${Math.round(1234.567)}<br>`
+            // result.innerHTML += `產生亂數: ${Math.random()}<br>`
+
+            // result.innerHTML += `需要漆 ${squareFeet}桶<br>`
+
+
+        }
+        window.addEventListener('load',doFirst)
+    </script>
+</body>
+</html>

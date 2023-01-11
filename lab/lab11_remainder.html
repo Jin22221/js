@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>餘數運算子</title>
+</head>
+<body>
+    <!-- 1. 練習餘數運算子 
+         2. 定義兩個變數 x, y , 其內含值為 100 與 3, 
+            請算出它們的和(+)，差(-)，積(*)，商(/)與餘數(%)，並將結果顯示在 console
+    -->
+    <div></div>
+    <script>
+        // 練習餘數運算子
+        console.log('10 % 3 = ' + 10 % 3);
+        console.log('10 % -3 = ' + 10 % -3);
+        console.log('-10 % 3 = ' + -10 % 3);
+        console.log('-10 % -3 = ' + -10 % -3);
+
+        // 在此定義變數 x, y
+        let x = 100
+        let y = 3
+        // 算出 和(+)、差(-)、積(*)、商(/)與餘數(%)，並將結果顯示在 console
+        document.querySelector('div').innerHTML = `
+        和:${x + y}<br>
+        差:${x - y}<br>
+        積:${x * y}<br>
+        餘數:${x % y}<br>
+        `
+    </script>
+</body>
+</html>

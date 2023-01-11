@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字串使用加法運算子</title>
+</head>
+<body>
+    <!-- 練習目的：了解運算的優先順序與字串的加運算 
+        1. 請計算 3 + 5 與 3 - 5，並於螢幕上顯示運算結果
+            3 + 5 = (算出的答案)
+            3 - 5 = (算出的答案) 
+    -->
+    <div></div>
+    <div id="a"></div>
+    <script>
+        let n1= 3 + 5;
+        console.log(`3 + 5 =${n1}`);
+        let n2= 3 - 5;
+        console.log(`3 - 5 =${n2}`);
+        document.querySelector('div').innerHTML = '# 3 + 5 =' + (3 + 5) + '<br>' + '# 3 + 5 =' + 3 + 5
+        document.querySelector('#a').innerHTML =`
+        # 3 + 5 = ${n1} <br>
+        # 3 - 5 = ${n2}
+        `
+    </script>
+</body>
+</html>

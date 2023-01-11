@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>攝氏與華氏溫度</title>
+</head>
+<body>
+    <!-- 1. 將華氏70度轉換成攝氏溫度。
+            公式  F => 9 / 5 * C + 32
+                  C => (F - 32) * 5 / 9
+            測試方式: 華氏溫度 -40  == 攝氏溫度 -40 度
+                     華氏溫度 212 度 == 攝氏溫度 100 度
+         2. 輸入攝氏溫度，計算出華氏溫度
+         3. 輸入華氏溫度，計算出攝氏溫度
+    -->  
+    <div>
+        攝氏:<input type="text" id="celsius">
+        <button>計算</button>
+        <p id="result"></p>
+    </div>
+    <script>
+    //     let C = -40
+    //     let F = 9 / 5 * C + 32;
+    //     document.querySelector('div').innerHTML= `
+    //     華氏溫度 -40  == 攝氏溫度 -40 度:${F} `
+    //     let F = 212
+    //    ` 華氏溫度 212 度 == 攝氏溫度 100 度:${}`
+
+       window.onload = function(){
+        let temp = document.querySelector('#celsius')
+        console.log(celsius);
+        
+       }
+
+    </script>
+</body>
+</html>

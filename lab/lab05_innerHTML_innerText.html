@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>輸出到畫面上</title>
+</head>
+<body>
+    <!-- 練習目的：將資料輸出到畫面上
+        1. 在 <div id="div1"></div> 內的標籤 <h1></h1> 放入內容: 我是標題
+           如何尋找 h1 標籤: document.querySelector('h1')
+        2. 接下來在 <div id="div2"></div> 內放入標籤及內容: <p>我是內容</p>
+    -->
+    <div id="div1">
+        <h1></h1>
+    </div>
+    <div id="div2"></div>
+
+    <script>
+        document.querySelector('#div1 h1') .innerText = '我是標題'
+        document.querySelector('#div2') .innerHTML = '<p>我是內容</p>'
+
+    </script>
+</body>
+</html>

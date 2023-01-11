@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>乘法運算子</title>
+</head>
+<body>
+    <!-- 練習目的：了解乘法運算子 
+        1. 定義長方形的寬 width 為 123.45, 高 height 為 6.7
+           印出該長方形的邊長(len)和與面積(area)。
+    -->
+    <div></div>
+    <script>
+        document.querySelector('div').innerHTML = `
+        len = ${123.45 * 2 + 6.7 * 2} <br>
+        area = ${123.45 * 6.7} 
+        `
+
+        let width = 123.45
+        let height = 6.7
+        let len = 2 * (width + height)
+        let area = width * height
+        document.querySelector('div').innerHTML =`
+        長方形邊常: ${len} <br>
+        長方形面積: ${area}
+        `
+    </script>
+</body>
+</html>

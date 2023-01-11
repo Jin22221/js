@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>運算子</title>
+</head>
+<body>
+    <!-- 計算89個雞蛋是幾打又多幾個 -->
+    <div></div>
+    <script>
+        let x = 89
+        document.querySelector('div').innerHTML = `
+        89個雞蛋是幾打又多幾個:<br> ${parseInt( x / 12 )}打 <br>
+        又${x % 12} 個
+        `
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <style>
+        .addButton{
+            border: 1px solid pink;
+            padding: 5px 10px;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span id="A1001" class="addButton">
+            Add Cart
+            <input type="hidden" value="Akdj|fomosa.jpg|5000">
+        </span>
+        <span id="A1005" class="addButton">
+            Add Cart
+            <input type="hidden" value="Lion|lion.jpg|8000">
+        </span>
+    </div>
+    <script>
+        function doFirst(){
+            let list = document.querySelectorAll('.addButton')
+            for(let i =0;i < list.length;i++){
+                list[i].addEventListener('click',function(e){
+                    console.log(e.target.id);
+                    // let teddyInfo = document.querySelector(`#${e.target.id}input`).value
+                })
+            }
+        }
+        
+        
+        
+        window.addEventListener('load',doFirst)
+    </script>
+</body>
+</html>
