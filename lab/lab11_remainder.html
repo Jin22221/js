@@ -22,11 +22,15 @@
         let y = 3
         // 算出 和(+)、差(-)、積(*)、商(/)與餘數(%)，並將結果顯示在 console
         document.querySelector('div').innerHTML = `
-        和:${x + y}<br>
+        和:${x + y}
         差:${x - y}<br>
         積:${x * y}<br>
         餘數:${x % y}<br>
         `
+        console.log(`
+        aaa 
+        bbb
+        ${x}`);//反引號中的內容在console換行會執行,在畫面上不會
     </script>
 </body>
 </html>
