@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Js -- for & break</title>
+</head>
+<body>
+  <script>
+    // break，就是遇到五的倍數就跳離迴圈
+    let sum = 0;// 變數本身拿來做加總，初值給 0
+    for (let num = 1; num <= 10; num++) {
+      if (num % 5 == 0){
+        break;
+      }
+      sum += num;
+      console.log(`num is ${num}, sum is ${sum}`);
+    }
+    console.log('Done');
+    // continue，就是遇到五的倍數就不做
+    sum = 0;
+    for (let num = 1; num <= 10; num++) {
+      if (num % 5 == 0){
+        continue;
+      }
+      sum += num;
+      console.log(`num is ${num}, sum is ${sum}`);
+    }
+    console.log('Done');
+  </script>
+</body>
+</html>
