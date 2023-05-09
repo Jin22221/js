@@ -12,26 +12,30 @@
     -->
 
     <script>
-        // let num = 1;
-        // let sum = 0;
-        // while (num<=20) {
-        //     sum += num
-        //     num++
-        // }
-        // console.log(sum);
-        let sum = 0
-        for(let num = 1 ;num <= 10; num++ ){
-            sum += num
-
-        }
-        console.log(`num is ${num},sum is ${sum}`);
-        //  total = 0
-        // let odd = 1
-        // while (num<=19) {
-        //     total += odd 
-        //     odd += 2
-        // }
-        // console.log(total);
+      //1.
+      let num = 1;
+      let sum = 0;
+      while (num <= 20) {
+        sum += num;
+        num++;
+      }
+      console.log(`sum = ${sum}`);
+      //2.
+      let odd = 1;
+      sum = 0; //已經宣告過，不需要再 let。之前 sum值為 210，所以要歸零
+      while (odd <= 19) {
+        sum += odd;
+        odd += 2;
+      }
+      console.log(`1 + 3 + 5 + 7 + 19 = ${sum}`);
+      //3.
+      let even = 2;
+      sum = 0;
+      while (even <= 20) {
+        sum += even;
+        even += 2;
+      }
+      console.log(`2 + 4 + 6 + 8 + 20 = ${sum}`);
     </script>
 </body>
 </html>
