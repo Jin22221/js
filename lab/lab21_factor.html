@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>因數</title>
+</head>
+
+<body>
+
+  <div></div>
+  <script>
+    // 找出某數的所有因數(除了 1 和本身以外)
+    // 因數是指能夠整除某個正整數的正整數，例如 6 的因數有 1、2、3、6。通常用符號 d(n) 或 factors(n) 來表示某個數字 n 的因數集合。
+    function doFirst() {
+      // 產生 1~ 100 之間的亂數
+      let num = 10
+
+      let result = document.querySelector('div')
+
+      let isPrime = true; // 假設所有的數都是質數
+
+
+      // for (let div = 2; div < num; div++) {
+      //   if (num % div == 0) {
+      //     result.innerHTML += `${num} is divisible by ${div} <br>`
+      //   }
+      // }
+      for (let div = 2; div * div <= num; div++) {
+
+        if (num % div == 0) {
+          if (div * div != num) {
+            //不是平方根
+            result.innerHTML += `${num} is divisible by ${div} and ${num / div} <br>`
+          } else {
+            //是平方根
+            result.innerHTML += `${num} is divisible by ${div} <br>`
+          }
+          isPrime = false;
+        }
+      }
+
+      if (isPrime == true) {
+        result.innerHTML += `${num} is prime <br>`
+      }
+
+    }
+    window.addEventListener('load', doFirst)
+  </script>
+</body>
+
+</html>
