@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nestedLoop4</title>
+</head>
+<body>
+  <div></div>
+    <script>
+        // ABCDEF
+        // BCDEF
+        // CDEF
+        // DEF
+        // EF
+        // F
+        function doFirst() {
+            const ROWS = 6
+            const CHARS = 6
+            let fromA = 65 //ASCII code
+
+            for(row = 0; row < ROWS; row++){
+                for(col = fromA + row; col < fromA + CHARS; col++){
+                    document.querySelector('div').innerHTML +=      
+                    `${String.fromCharCode(col)}`//字串的方法
+                }
+                document.querySelector('div').innerHTML += `<br>`
+            }
+            
+        }
+        window.addEventListener('load',doFirst)
+    </script>
+</body>
+</html>
