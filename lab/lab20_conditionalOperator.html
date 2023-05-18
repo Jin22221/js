@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>do-while</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>條件運算子 ? :</title>
 </head>
+
 <body>
-  
-   <div></div>
-    <script>
-        
-        function doFirst() {
-            const COVERAGE = 200
-           let squareFeet = prompt
-           let cans = 0
-           let result = document.querySelector('div')
-            result.innerHTML = `你需要漆${squareFeet}`
 
+  <div></div>
+  <script>
+    //一統油漆可以漆 200 square feet(平方英尺)，計算你需要幾桶油漆
+    function doFirst() {
+      const COVERAGE = 200 // coverage 覆蓋率
+      // let squareFeet = prompt('你需要漆的面積?')
+      //產生 150 ~ 1000 之間的 square feet
+      let squareFeet = parseInt(Math.random() * 851) + 150;
+      let cans = 0 //幾桶
+      let result = document.querySelector('div')
 
-        //    for(ROWS = 1; ROWS <= 6; ROWS++){
-        //         for(col = fromA; col <= fromA + CHARS; col++){
+      result.innerHTML = `你需要漆 ${squareFeet} square feet <br>`
 
-        //             document.querySelector('div').innerHTML += `${String.fromCharCode(col)}`
-        //         }
-        //         document.querySelector('div').innerHTML += `<br>`
-
-        //     }
-            
-        }
-        window.addEventListener('load',doFirst)
-    </script>
+      cans = parseInt(squareFeet / COVERAGE) //起碼需要幾桶油漆
+      cans += (squareFeet % COVERAGE) != 0 ? 1 : 0; // != 0 =>還有餘數，需要再一桶
+      unit = (cans <= 1) ? 'can' : 'cans'
+      //如果沒有用+=的話，後面的會覆蓋掉
+      result.innerHTML += `You need ${cans} ${unit} of paint. <br>`
+    }
+    window.addEventListener('load', doFirst)
+  </script>
 </body>
+
 </html>
