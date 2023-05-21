@@ -15,6 +15,7 @@
   <script>
     function doFirst() {
       let result = document.querySelector('div');
+      const FREEZING = 0;
       let allDays = 0;
       let coldDays = 0;
       // 產生 5個 -5 到 5 之間的亂數
@@ -23,11 +24,12 @@
         // console.log(temperature);
         result.innerHTML += `${temperature} `
 
-        if (temperature < 0) {
+        if (temperature < FREEZING) {
           coldDays++
         }
       }
       result.innerHTML += `<br>${coldDays}<br>`
+      result.innerHTML += `${allDays} days total: ${coldDays / allDays * 100}% were below freezing.`
     }
 
     window.addEventListener('load', doFirst)
