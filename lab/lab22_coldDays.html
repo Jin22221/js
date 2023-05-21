@@ -15,9 +15,10 @@
   <script>
     function doFirst() {
       let result = document.querySelector('div');
+      let allDays = 0;
       let coldDays = 0;
       // 產生 5個 -5 到 5 之間的亂數
-      for (let allDays = 0; allDays < 5; allDays++) {
+      for (allDays = 0; allDays < 5; allDays++) {
         let temperature = parseInt(Math.random() * 11) - 5
         // console.log(temperature);
         result.innerHTML += `${temperature} `
