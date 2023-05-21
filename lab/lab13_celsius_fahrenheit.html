@@ -28,6 +28,14 @@
             <button>計算</button>
             <p id="result2"></p>
         </div>
+        <input type="checkbox" name="man" id="1">男
+        <input type="checkbox" name="woman" id="2">女
+        <form action="">
+          <input type="submit">
+          <input type="image">
+          <button></button>
+        </form>
+        
     <script>
         // let fahrenheit = -40
         // let celsius = (fahrenheit - 32) * 5 / 9
@@ -60,8 +68,22 @@
                 console.log(fahrenheit);
 
                 document.querySelector('#result2').innerText = `華氏${fahrenheit}度等於攝氏${celsius}度`
-            }
+              }
         }
+    //     window.onload = function() {
+          
+    //       document.querySelectorAll('input')[0].onclick = function(){
+    //         const manInput = document.querySelectorAll('input[name="man"]');
+    //         for (let i = 0;i <manInput.length; i++) {
+    //           if (manInput[i].checked) {
+    //             console.log('男性被選中了');
+    //           }else {
+    //             console.log('未選中');
+    //           }
+    //         }
+            
+    //     }
+    // }
     </script>
 </body>
 </html>
