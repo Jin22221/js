@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>codeDays</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coldDays</title>
 </head>
+
 <body>
-  
-   <div></div>
-    <script>
-       function doFirst() {
-       let div = 0
-       for(let div = 1; div < 5; div++) 
-       
+
+  <div></div>
+
+  <script>
+    function doFirst() {
+      let result = document.querySelector('div');
+      let coldDays = 0;
+      // 產生 5個 -5 到 5 之間的亂數
+      for (let allDays = 0; allDays < 5; allDays++) {
+        let temperature = parseInt(Math.random() * 11) - 5
+        // console.log(temperature);
+        result.innerHTML += `${temperature} `
+
+        if (temperature < 0) {
+          coldDays++
+        }
+      }
+      result.innerHTML += `<br>${coldDays}<br>`
     }
 
-        window.addEventListener('load',doFirst)
-    </script>
+    window.addEventListener('load', doFirst)
+  </script>
 </body>
+
 </html>
