@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>99</title>
-</head>
-<body>
-   <div></div>
-   <script>
-    function doFirst(){
-        let result = document.querySelector('div')
-        for(i = 1; i <= 9; i++){
-            for(j = 1; j <= 5; j++)
-            result.innerHTML += `${i,j}`
-        }
 
+<head>
+  <meta charset="UTF-8">
+  <title>99</title>
+</head>
+
+<body>
+  <!--  作業
+         9  8  7  6  5  4  3  2  1
+        18 16 14 12 10  8  6  4
+        27 24 21 18 15 12  9
+        36 32 28 24 20 16
+        45 40 35 30 25
+        54 48 42 36
+        63 56 49
+        72 64
+        81
+     -->
+  <!-- 
+    1   2   3   4   5   6   7   8   9 
+    2   4   6   8  10  12  14  16  18 
+    3   6   9  12  15  18  21  24  27 
+    4   8  12  16  20  24  28  32  36 
+    5  10  15  20  25  30  35  40  45 
+    6  12  18  24  30  36  42  48  54 
+    7  14  21  28  35  42  49  56  63 
+    8  16  24  32  40  48  56  64  72 
+    9  18  27  36  45  54  63  72  81
+   -->
+  <div></div>
+  <script>
+    function doFirst() {
+      let result = document.querySelector('div')
+      for (i = 1; i <= 9; i++) {
+        for (j = 1; j <= 9; j++) {
+          if (i * j < 10) {
+            result.innerHTML += `&nbsp;&nbsp;${i * j}&nbsp; `
+          } else {
+            result.innerHTML += `${i * j}&nbsp; `
+          }
+        }
+        result.innerHTML += `<br>`
+      }
     }
-    window.addEventListener('load',doFirst)
-   </script>
+    window.addEventListener('load', doFirst)
+  </script>
 </body>
+
 </html>
