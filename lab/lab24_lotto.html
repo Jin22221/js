@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lotto</title>
+</head>
+
+<body>
+
+  <div></div>
+  <script>
+    function doFirst() {
+      let result = document.querySelector('div')
+      let lotto;
+      let arr = []
+      for (let i = 0; i < 6; i++) {
+        lotto = parseInt(Math.random() * 49) + 1
+        arr.push(lotto)
+      }
+      result.innerHTML = `${arr}`
+    }
+    window.addEventListener('load', doFirst)
+  </script>
+</body>
+
+</html>
