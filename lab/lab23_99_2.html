@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>99_2</title>
+</head>
+
+<body>
+  <!--  作業
+         9  8  7  6  5  4  3  2  1
+        18 16 14 12 10  8  6  4
+        27 24 21 18 15 12  9
+        36 32 28 24 20 16
+        45 40 35 30 25
+        54 48 42 36
+        63 56 49
+        72 64
+        81
+     -->
+
+  <div></div>
+  <script>
+    function doFirst() {
+      let result = document.querySelector('div')
+      let ROW = 9;
+      for (i = 1; i <= ROW; i++) {
+        for (j = -9; j <= -1; j++) {
+          justNum = Math.abs(i * j);
+          justNum < 10 ? result.innerHTML += `&nbsp&nbsp&nbsp${justNum} ` : result.innerHTML += `&nbsp${justNum} `// 後面用空白鍵,僅空一格有效
+          if (i == Math.abs(j)) {
+            break;
+          }
+        }
+        result.innerHTML += `<br>`
+      }
+    }
+    window.addEventListener('load', doFirst)
+  </script>
+</body>
+
+</html>
