@@ -27,9 +27,70 @@
 
   3. 屬性: length
   4. 方法: 
-      新增在後端: push(item), pop() 
-      新增在前端: unshift(item), shift()
+          新增刪除在後端: push(item), pop() 
+          新增刪除在前端: unshift(item), shift()
+          新增刪除在任意端:
+              splice(index) 刪除
+              splice(index, 筆數) 刪除
+              splice(index, 筆數, 100, 200, 300) 刪除,也可以新增
+            indexOf(物件)
+            lastIndexOf(物件)
+            join(delimiter) 陣列組成字串
+            forEach()
+            includes()
+            
+            filter()
+            map()
+            reduce()
   -->
+  <div></div>
+  <script>
+    function doFirst() {
+      let friends = ['Andy', 'Brian', 'Carl', 'Dale', 'Ella']
+      let result = document.querySelector('div')
+
+      for (let i = 0; i < friends.length; i++) {
+        result.innerHTML += `${friends[i]}<br>`
+      }
+      result.innerHTML += `<hr>`
+      // indexOf()
+
+      let months = ['January', 'February', 'March', 'April', 'May', 'June']
+
+      result.innerHTML += `${months.indexOf('February')}<br>`
+      result.innerHTML += `${months.indexOf('february')}<br>` //找不到為"-1"
+      result.innerHTML += `<hr>`
+      // push()
+
+      for (let i = 0; i < months.length; i++) {
+        result.innerHTML += `${months[i]}<br>`
+      }
+
+      result.innerHTML += `<p></p>`
+
+      months.push('July')
+      months.push('August')
+
+      for (let i = 0; i < months.length; i++) {
+        result.innerHTML += `${months[i]}<br>`
+      }
+
+      result.innerHTML += `<p></p>`
+      // pop()
+
+      months.pop()
+
+      for (let i = 0; i < months.length; i++) {
+        result.innerHTML += `${months[i]}<br>`
+      }
+      result.innerHTML += `<hr>`
+      // join()
+
+      let str = months.join(' - ')
+      result.innerHTML += `${str}<br>`
+    }
+    window.addEventListener('load', doFirst)
+  </script>
 </body>
 
 </html>
