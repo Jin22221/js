@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>質數</title>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // 找出某數的所有質數(包含 1 和本身)
+    function doFirst() {
+      let num = 10;
+      let result = document.querySelector('div')
+      let isPrime = true;
+
+      for (let i = 1; i * i <= num; i++) {
+        if (num % i == 0) {// i 是 num 的因數
+          console.log(i);
+          //to be continued...
+        }
+      }
+
+    }
+    window.addEventListener('load', doFirst);
+  </script>
+</body>
+
+</html>
