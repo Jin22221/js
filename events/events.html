@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>events</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./new.js"></script>
+</head>
+
+<body>
+  <form id="theForm">
+    <fieldset>
+      <legend>register the event</legend>
+      <p>Select the events you want to listen for.</p>
+      <div>
+        <label class="label">Your name</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <label class="label">Your age</label>
+        <input type="number" name="age" id="age" min="1">
+      </div>
+      <div>
+        <label class="label">The file</label>
+        <input type="file" name="file" id="theFile">
+      </div>
+      <hr>
+      <!-- ===== -->
+      <div>
+        <input type="checkbox" name="contextmenu" id="contextmenu">
+        <label>contextmenu</label>
+      </div>
+      <div>
+        <input type="checkbox" name="select" id="select">
+        <label>select</label>
+      </div>
+      <div>
+        <input type="checkbox" name="change" id="change">
+        <label>change</label>
+      </div>
+      <div>
+        <input type="checkbox" name="input" id="input">
+        <label>input</label>
+      </div>
+      <div>
+        <input type="checkbox" name="scroll" id="scroll">
+        <label>scroll</label>
+      </div>
+      <div>
+        <input type="checkbox" name="resize" id="resize">
+        <label>resize</label>
+      </div>
+
+      <div>
+        <button id="submit">Submit</button>
+      </div>
+      <textarea name="feedback" id="feedback" cols="45" rows="10"></textarea>
+    </fieldset>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+
+body{
+    font: 110% Calibri;
+    background: #ccc;
+}
+#theForm{
+    background: #fff;
+    border: 1px solid #ddd;
+    width: 380px;
+    padding: 10px;
+    margin: 50px auto;
+}
+#theForm div{
+    margin: 10px 0;
+}
+#submit,legend{
+    text-transform: capitalize;
+}
+p {
+    font-size: 14px;
+    color: tomato;
+}
+.label {
+  text-transform: capitalize;
+  width: 90px;
+  float: left;
+}
