@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 的內建物件: String</title>
+  <style>
+    .addButton {
+      border: 1px solid maroon;
+      padding: 5px;
+      border-radius: 5px;
+      margin: 5px;
+      font: 18px Tahoma;
+      color: maroon;
+      cursor: pointer;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+  1. 建立字串物件
+      let str = ''
+      let str = new String()
+
+      let str = 'JavaScript'
+      let str = new String('JavaScript')
+
+  2. 屬性: length
+  3. 方法:
+      - 拆分
+      charAt(index)
+      indexOf(字串) | lastIndexOf(字串) // 該字串有沒有在裡面,沒有的話為 -1
+      substr(index from, count) // 從字串中找到子字串
+      slice(index from[, index to]) // 從字串中找到子字串(包含 from 不包含 to)
+      
+      - 操作
+      toLowerCase()
+      toUpperCase()
+      split() 字串切割成陣列
+      replace(子字串, 欲取代的字串)(好用!!)
+      // 例如在購物車裡面要刪除某筆，但不要想成刪除
+      let str = 'A1001, A1005, A1006, A1002, '
+      str.replace('A1005, ','') 
+  4. 跳脫字元
+      \n  \r\n 換行 (enter, shift enter)
+      \t       tab
+      \\
+      \'
+      \"
+
+      印出 What's your name?
+      console.log('What\'s your name?')
+      console.log("What's your name?")
+      console.log(`What's your name?`)
+
+      印出 "My name is Peter."
+      console.log(`My name is Peter.`)
+      console.log('"My name is Peter."')
+      console.log("\"My name is Peter.\"")
+-->
+
+  <div>
+    <span id="A1001" class="addButton">
+      Add Cart
+      <input type="hidden" value="Formosa|formosa.jpg|5000">
+    </span>
+    <span id="A1002" class="addButton">
+      Add Cart
+      <input type="hidden" value="Teddy Brown|brown.jpg|7000">
+    </span>
+    <span id="A1003" class="addButton">
+      Add Cart
+      <input type="hidden" value="Teddy Cinnamon|cinnamon.jpg|6800">
+    </span>
+    <span id="A1004" class="addButton">
+      Add Cart
+      <input type="hidden" value="Innocent Bear|innocent.jpg|7200">
+    </span>
+    <span id="A1005" class="addButton">
+      Add Cart
+      <input type="hidden" value="Lion Bear|lion.jpg|8000">
+    </span>
+  </div>
+  <div id="result"></div>
+
+  <script>
+
+    function doFirst() {
+      let language = 'JavaScript'
+      // charAt()
+      console.log(`charAt():${language.charAt('4')}`); // S
+      // indexOf()
+      console.log(`indexOf():${language.indexOf('a')}`); // 1
+      // lastIndexOf()
+      console.log(`lastIndexOf():${language.lastIndexOf('a')}`); // 3
+      console.log(`lastIndexOf():${language.lastIndexOf('Script')}`); // 4
+
+      // ===== lastIndexOf 的應用
+      let url = 'http://www.silvia.com/web/share/landing.html'
+      console.log(`lastIndexOf():${url.lastIndexOf('/')}`); // 31
+      let fileIndex = url.lastIndexOf('/')
+      // slice()
+      let fileName = url.slice(fileIndex + 1) // + 1 是為了讓 index 變 32 (不要'/')
+      console.log(fileName);
+
+      // =====
+
+
+
+      // 先跟 HTML 產生關聯，在建立事件聆聽功能
+      let list = document.querySelectorAll('.addButton') // list 是陣列
+      // 幫每個 Add Cart 建立事件聆聽功能
+      for (let i = 0; i < list.length; i++) {
+        list[i].addEventListener('click', function (e) {
+          // console.log(e.target);
+          // console.log(e.target.nodeName);
+          // console.log(e.target.id);
+          //抓 value 的值
+          let tedyInfo = document.querySelector(`#${e.target.id} input`).value
+          // console.log(tedyInfo);
+          addItem(e.target.id, tedyInfo) // 傳兩個參數給此函數
+        })
+      }
+
+    }
+    // 宣告兩個變數來接收
+    function addItem(itemId, itemValue) {
+      console.log(`${itemId} \n${itemValue}`);
+      let result = document.querySelector('#result')
+      // 字串切割成陣列
+      let title = itemValue.split('|')[0]
+      let image = itemValue.split('|')[1]
+      let price = parseInt(itemValue.split('|')[2]) + 100 //原本 =>會字串相加。沒有parseInt的話只有"+"會將100視為字串，其餘都正常
+      result.innerHTML += `
+      商品編號: ${itemId}<br>
+      品項名稱: ${title}<br>
+      品項圖片: ${image}<br>
+      品項價格: ${price}<br>
+      <hr>
+      `
+    }
+    window.addEventListener('load', doFirst)
+  </script>
+</body>
+
+</html>
