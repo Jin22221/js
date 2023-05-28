@@ -4,7 +4,8 @@ function doFirst(){
   document.querySelector('#theForm').onsubmit = calculate
 }
 
-function calculate(){
+function calculate(e){
+  e.preventDefault()
   let quantity = document.querySelector('#quantity').value
   let price = document.querySelector('#price').value
   let tax = document.querySelector('#tax').value
@@ -23,7 +24,7 @@ function calculate(){
 
   document.querySelector('#total').innerText = total
 
-  return false;
+  // return false;
   // alert(price)
 }
 
