@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 的自訂物件: Object</title>
+</head>
+
+<body>
+  <script>
+
+    // 1. 建立陣列物件
+    // let obj = {}
+    // let obj = new Object()
+
+    // let obj = {
+    //   // 屬性: 屬性值,
+    //   // key: value,
+    //   name: 'Peter',
+    //   age: 10,
+    // }
+
+    let man = {
+      name: 'Peter',
+      age: 40,
+      gender: 'male',
+      favoriateColor: ['blue', 'black', 'gray'],
+      car: {
+        make: 'BMW',
+        mode: 'X5',
+        year: 2023,
+      },
+      retired: false,
+      birthday: new Date(1982, 11, 17),
+      sayHello: function () { // ES5
+        alert("Hello")
+      },
+
+      sayHello() { // ES6
+        alert("Hello")
+      },
+    }
+
+    // 2. 如何存取? 
+    man.age // 40
+    man.favoriateColor[1]
+    物件的陣列表示法: man['favoriateColor'][1]
+    man.car.mode
+    物件的陣列表示法: man['car']['mode']
+    man.retired
+    man.birthday // Fri Dec 17 1982 00:00:00 GMT+0800 (台北標準時間)
+
+    語法: for (let key in Object) { }
+
+    for (let key in Object) {
+      console.log(key)        // 印出「:」左邊的 key 值
+      console.log(man[key])   // 印出「:」右邊的 value 值
+    }
+
+    // 3. 刪除物件的屬性
+    delete man.retired
+    // 4. 關於物件的陣列表示法
+    let products = {
+      10: 'hat',
+      20: 'T-shirt',
+      30: 'iPad',
+      40: 'AirPods',
+      50: 'MacPro',
+      60: 'iPhone',
+    }
+    // console.log(products.10) // SyntaxError: Unexpected number
+    console.log(products[10]) // 'hat'
+  </script>
+
+</body>
+
+</html>
