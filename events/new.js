@@ -16,6 +16,11 @@ function setEvent(e){
     // 如果有勾選，幫整個網頁建立該事件的聆聽功能
     if(yourCheck.checked){
       document.addEventListener(events[i], report)
+      // resize 只有針對 window
+      // 印出e.target.nodeName的話(window 沒有標籤名稱)
+    }else {
+      
+      document.removeEventListener(events[i], report)
     }
     
   }
