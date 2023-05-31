@@ -1,0 +1,33 @@
+*{
+    font: 18px Calibri;
+}
+body{
+    background: #ccc;
+}
+#theForm{
+    background: #fff;
+    border: 1px solid #ddd;
+    width: 400px;
+    padding: 10px;
+    margin: 50px auto;
+}
+#theForm div{
+    margin: 10px 0px;
+}
+label,#submit{
+    text-transform: capitalize;
+}
+#feedback {
+  font-size: 16px;
+  color: steelblue;
+}
+ol li {
+  background: #abc;
+  width: 80%;
+  margin: 5px;
+  padding: 5px;
+}
+ol li:hover{
+  background: #cba;
+  cursor: pointer;
+}
