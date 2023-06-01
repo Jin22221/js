@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>toReversed</title>
+  <title>toSpliced</title>
 </head>
 
 <body>
   <script>
-    // toReversed()
+    // toSpliced()
     const people = ["Sally", "Kyle", "John"]
-    const reversedPeople = people.toReversed()
-    // const reversedPeople = [...people].reverse()
+    const copy = people.toSpliced(0, 2, "New")
+    // const copy = [...people].splice(0, 2, "New")
 
-    console.log("Reversed", reversedPeople)
+    console.log("Copy", copy)
     console.log("Original", people)
   </script>
 </body>
