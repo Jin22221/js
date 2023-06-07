@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 的內建物件: Date</title>
+</head>
+
+<body>
+  <!-- 時間戳記 / 紀元(UNIX epoch): 1970/1/1 00:00:00
+  (1) someday = new Date(milliseconds) // 一天有 86400000 毫秒
+  (2) someday = new Date(`日期時間字串`)
+  ex. new Date(`Nov 21,2022`)
+  ex. new Date(`November 21,2022`)
+  ex. new Date(`Nov 21 2022`)
+  ex. new Date(`21 Nov 2022`)
+  ex. new Date(`2022/11/21`)
+  ex. new Date(`11/21/2022`)
+  ex. new Date(`21/11/2022`) // Invalid Date
+  ex. new Date(`11/21/2022 09:27:51`)
+
+  方法:
+  - get 系列 (讀取個別資料)
+  - set 系列
+  - to 系列 (讀取整串資料) -->
+
+  <div id="result"></div>
+
+  <script>
+    function doFirst() {
+      let now = new Date()
+      console.log(now.getDate());
+      console.log(now.getDay()); // 星期幾
+      console.log(now.getFullYear());
+      console.log(now.getMonth()); // 從 0 開始
+      console.log(now.getTime()); // 毫秒數
+
+      // UTC (Coordinated Universal Time)
+      console.log(now.getUTCHours()); // 1 (現在早上九點多，但標準時區晚八小時，所以現在是 1 點多)
+
+      // UTC 和我們的時間相差 8小時 // 區別實益:拍賣
+      let end = new Date('22 Mar 2023 20:00:00 UTC') // Thu Mar 23 2023 04:00:00 GMT+0800 (台北標準時間)
+
+      // 如何計算我們的時間差?
+      let offset = end.getTimezoneOffset()
+      console.log(offset); // -480 (傳回 user 和 UTC 的時間差，單位是「分鐘」)
+
+      // =======
+      document.getElementById('result').innerHTML = `
+        Right now it is ${now.toLocaleDateString()} at
+        ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()}
+      `
+
+    }
+    window.addEventListener('load', doFirst)
+  </script>
+</body>
+
+</html>
