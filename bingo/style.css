@@ -1,0 +1,17 @@
+
+body{
+    background: #ccc;
+    font: 20px Calibri;
+}
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 2px solid #666;
+  width: 20%;
+  padding: 20px;
+  text-align: center;
+}
+#free {
+  background: #f66;
+}
