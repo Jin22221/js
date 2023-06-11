@@ -31,6 +31,37 @@ function doFirst(){
     month.appendChild(option)
   }
 
+  // 當月的第一天是星期幾
+  let firstDay = new Date(`${YYYY},${MM} , 1`).getDay()
+  // console.log(firstDay);
+
+  // 當月一共有幾天
+  let monthDate = new Date(YYYY, MM, 0).getDate()
+  // console.log(monthDate);
+
+  showCalendar(firstDay, monthDate)
+  
+}
+function showCalendar(firstDay, monthDate){
+  let calendar = document.querySelector('#calendar') // 找到 table
+  let amount = firstDay + monthDate // 總天數
+
+  // 按照總天數來決定要排幾列
+  for(let i = 0; i < amount; i++){
+    if(i % 7 == 0){// 一禮拜 7 天(一列)
+      // trWeek = document.createElement('tr')
+      // calendar.appendChild(trWeek)
+      tr = calendar.appendChild(document.createElement('tr'))
+    }
+    if(i < firstDay){ 
+      // let td = document.createElement('td')
+      td = tr.appendChild(document.createElement('td'))
+      td.innerText = ''
+    }else {
+      td = tr.appendChild(document.createElement('td'))
+      td.innerText = i - firstDay + 1
+    }
+  }
 }
 
 window.addEventListener('load',doFirst)
