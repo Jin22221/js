@@ -13,7 +13,7 @@ function doFirst(){
       // option.setAttribute('selected','selected') // 之前 xhtml規定要有屬性值，但她原本就沒屬性值 // 寫法一
       option.selected = true // selected -> html標籤的"屬性" // 寫法二
     }
-    // option.setAttribute('value', i) // (屬性 , 屬性值)
+    option.value = i // option.setAttribute('value', i) // (屬性 , 屬性值)
     option.innerText = i
     // 3.找到爸爸，加進去
     year.appendChild(option)
