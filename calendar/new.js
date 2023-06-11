@@ -5,7 +5,7 @@ function doFirst(){
 
   // 年的選單 // 先抓到年是多少
   let year = document.querySelector('#year')
-  for(let i = YYYY - 20; i < YYYY + 20; i++){
+  for(let i = YYYY - 31; i < YYYY + 20; i++){
     // 1.建標籤
     let option = document.createElement('option')
     // 預選:今年 // 2.將該標籤的屬性和方法寫好
@@ -40,6 +40,9 @@ function doFirst(){
   // console.log(monthDate);
 
   showCalendar(firstDay, monthDate)
+
+  year.addEventListener('change', changeCalendar)
+  month.addEventListener('change', changeCalendar)
   
 }
 function showCalendar(firstDay, monthDate){
@@ -63,7 +66,30 @@ function showCalendar(firstDay, monthDate){
     }
   }
 }
+function changeCalendar() {
+  // alert()
+  // 清除原來的月曆
+  let calendar = document.querySelector('#calendar') // table
+  let length = calendar.childNodes.length - 1 // - 1 :扣掉"換行"
+      /* 因為已知要清幾行,不然會用 while(清全部的話) */
+      for(let i = 2; i <= length; i++){
+        calendar.childNodes[i].innerHTML = ''
+      }
+  // 產生新的月曆
+  let chooseYear = document.querySelector('#year').value
+  let chooseMonth = document.querySelector('#month').value
 
+  // 重選之後~~當月的第一天是星期幾
+  let firstDay = new Date(`${chooseYear},${chooseMonth} , 1`).getDay()
+
+  // 重選之後~~當月一共有幾天
+  let monthDate = new Date(chooseYear, chooseMonth, 0).getDate()
+
+  showCalendar(firstDay, monthDate)
+}
+
+// year.addEventListener('change', changeCalendar)
+// month.addEventListener('change', changeCalendar)
 window.addEventListener('load',doFirst)
 
 // 動態新增
