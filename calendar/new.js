@@ -18,6 +18,19 @@ function doFirst(){
     // 3.找到爸爸，加進去
     year.appendChild(option)
   }
+
+  // 月的選單
+  let month = document.querySelector('#month')
+  for( i = 1; i <= 12; i++){
+    let option = document.createElement('option')
+    if(i == MM){
+      option.setAttribute('selected','selected') // option.selected = true
+    }
+    option.value = i
+    option.innerText = i
+    month.appendChild(option)
+  }
+
 }
 
 window.addEventListener('load',doFirst)
