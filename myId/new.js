@@ -14,7 +14,7 @@ function check(){
   }
   // console.log(letters);
 
-  let areaCode = ['10', '11', '12', '13', '14', '15', '16', '17', '34', '18', '19', '20', '21', '22', '35', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33']
+  let areaCodeAll = ['10', '11', '12', '13', '14', '15', '16', '17', '34', '18', '19', '20', '21', '22', '35', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33']
 
   // 檢查輸入的長度
   if(myId.length != 10){
@@ -47,5 +47,27 @@ function check(){
   if(myId.charAt(1) != 1 && myId.charAt(1) != 2){
     alert(`第二個字要是 1 或 2`)
   }
+
+  let checkCode = 0
+  // 印出 letters 陣列對應 areaCodeAll 陣列的值
+  let letter = myId[0]
+  let index = letters.indexOf(letter)
+  console.log(areaCodeAll[index]);
+
+  // 並計算第一個英文字母的加權
+  let areaCode = areaCodeAll[index]
+  checkCode = areaCode[0] * 1 + areaCode[1] * 9
+  console.log(checkCode);
+
+  // let areaCode = areaCodeAll?
+
+
+  // 檢查碼
+  // let checkCode = 0 // 1
+  // 2
+  for(i = 1; i <= 8; i++){
+    checkCode += parseInt(myId.charAt(i)) * (9 - i)
+  }
+  console.log(checkCode);
 }
 window.addEventListener('load',doFirst)
