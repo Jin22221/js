@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ES6 features -- spread(or rest) operator</title>
+</head>
+
+<body>
+  <script>
+    function add(x, y, z) {
+      console.log(x + y + z);
+      return x + y + z
+    }
+
+    let numArray = [5, 6, 7]
+    // add(numArray[0], numArray[1], numArray[2])  // 18
+    let ans = add(...numArray)  // 18 -> spread operator
+    // console.log(ans);
+
+
+    let meats = ['bacon', 'ham']
+
+    let food = ['apple', 'banana', 'coconut']
+    // console.log(food);
+
+    food = ['apple', ...meats, 'banana', 'coconut']
+    // console.log(food);
+  </script>
+</body>
+
+</html>
