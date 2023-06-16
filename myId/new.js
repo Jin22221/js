@@ -52,12 +52,12 @@ function check(){
   // 印出 letters 陣列對應 areaCodeAll 陣列的值
   let letter = myId[0]
   let index = letters.indexOf(letter)
-  console.log(areaCodeAll[index]);
+  // console.log(areaCodeAll[index]);
 
   // 並計算第一個英文字母的加權
   let areaCode = areaCodeAll[index]
   checkCode = areaCode[0] * 1 + areaCode[1] * 9
-  console.log(checkCode);
+  // console.log(checkCode);
 
   // let areaCode = areaCodeAll?
 
@@ -68,6 +68,24 @@ function check(){
   for(i = 1; i <= 8; i++){
     checkCode += parseInt(myId.charAt(i)) * (9 - i)
   }
-  console.log(checkCode);
+  // console.log(checkCode);
+
+  // let temp = checkCode % 10
+  // console.log(temp);
+
+  checkCode %= 10
+
+  if(checkCode == 0){
+    checkCode = 0
+  }else{
+    checkCode = 10 - checkCode
+  }
+  // console.log(checkCode);
+  if(checkCode != myId.charAt(9)){
+    alert(`不是合法的身分證字號`)
+  }else{
+    alert(`是合法的身分證字號`)
+  }
+  
 }
 window.addEventListener('load',doFirst)
