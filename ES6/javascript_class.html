@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ES6 new features -- 自訂物件(類別) class</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      // 屬性 -- 建構子(函數)，目的: 給初值
+      constructor(name, age, weight, status) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.tt = status;
+      }
+
+      // 方法
+      displayName() {
+        console.log(this.name);
+      }
+      displayAge() {
+        console.log(this.age);
+      }
+      displayWeight() {
+        console.log(this.weight);
+      }
+      getStatus() {
+        console.log(this.tt);
+      }
+    }
+
+    // let peter = new Person('Peter')
+    // peter.displayName()
+
+    // let peter = new Person('Peter')
+    // peter.displayAge() // undefined ->因為第二個參數沒給值,須照順序
+
+    let peter = new Person('Peter', 'Sam')
+    peter.displayAge()
+
+    let sally = new Person('Sally', 25, 48.5, true)
+    sally.displayName()
+    sally.displayAge()
+    sally.displayWeight()
+    sally.getStatus()
+  </script>
+</body>
+
+</html>

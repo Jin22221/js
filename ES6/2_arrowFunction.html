@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ES6 features -- arrow function</title>
+</head>
+
+<body>
+  <script>
+    // 1 直接輸出
+    function circleArea1(r) {
+      return Math.PI * r * r
+    }
+    console.log(circleArea1(10));
+
+    // 2 變數接收
+    let circleArea2 = (r) => {
+      return Math.PI * r * r
+    }
+    console.log(circleArea2(10));
+
+    // 3
+    let circleArea3 = r => Math.PI * r * r
+
+    console.log(circleArea3(10));
+  </script>
+</body>
+
+</html>
