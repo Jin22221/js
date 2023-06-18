@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>import & export</title>
+</head>
+
+<body>
+  <!--
+    如果 new.js 有使用 export(匯出)
+    此處的 script 要加上 type="module"
+    <script type="module" src="./new.js"></script> 
+  -->
+  export (匯出): 匯出「變數」,「函數」,「物件」
+
+  export 有兩種:
+    <!--  -->
+    - name export (具名匯出):匯出個別的「變數」,「函數」,「物件」，匯出前必須使用該名稱
+      ex. 匯出具名的變數
+          export let num = 6;
+          export let obj = {};
+
+      ex. 匯出具名的函數(方法)
+          export function doNothing(){...} 
+
+      ex. 匯出具名的物件
+          const n = 5;
+          const objA = {}
+          const objB = {}
+          export {n, objA, objB};
+      <!--  -->
+    - default export: 一個檔案只有一個 default export  (常用)
+      ex. 匯出物件
+          const objA = {}
+          const objB = {}
+          default export {objA, objB};
+
+      ex. 匯出具名的函數(方法)
+          default export function (){...}
+
+      ex. 匯出 class
+          default export class{// 參考 javascript_class.html}
+  <!-- =================================================== -->
+  import (匯入): 匯入「變數」,「函數」,「物件」
+    - 匯入 name export
+      ex.
+      // export
+      export const obj = {...}
+      export function doNothing(){...}
+
+      // import
+      import {obj} from './new.js' <!-- 使用解構賦值 --> // 副檔名如果是 js 可以省略
+
+      import {obj, doNothing} from './new.js'
+      doNothing()  // import 進來之後就可以直接使用
+      alert()
+
+    - 匯入 default export
+      // export
+      default export function (){...}
+
+      // import 並給名稱
+      import theFile from './new'
+      theFile()
+
+</body>
+
+</html>
